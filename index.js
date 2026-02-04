@@ -12,15 +12,16 @@ const users = [
 app.get("/", (req, res) => {
     res.send("Hi, My name is Patel Jivan");
 });
-app.get("/route2", (req, res) => {
-    res.send("Express server is running on route 2");
-});
 
 app.get("/users", (req, res) => {
     res.status(200).json(users);
 });
 
-app.get("/users:id", (req, res) => {
+app.get("/test",(req,res)=>{
+    res.send("This route is for testing purpose")
+})
+
+app.get("/users/:id", (req, res) => {
     const userId = Number(req.params.id);
     const user = users.find(u => u.id === userId);
 
